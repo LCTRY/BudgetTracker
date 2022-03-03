@@ -1,0 +1,281 @@
+:root {
+  --clr-background: rgb(243, 242, 242);
+  --clr-light: white;
+  --clr-accent: rgb(4, 238, 140);
+  --clr-dark: rgba(0, 0, 0, 0.884);
+  --clr-message: red;
+  --clr-income: green;
+  --clr-expense: red;
+
+  --fw-bold: 900;
+
+  --fs-h1: 2rem;
+  --fs-h2: 1rem;
+  --fs-body: 0.75rem;
+}
+@media (min-width: 500px) {
+  :root {
+    --fs-h1: 3rem;
+    --fs-h2: 1.5rem;
+    --fs-body: 1rem;
+  }
+}
+
+body {
+  margin: 0 auto;
+  width: 95%;
+  font-size: var(--fs-body);
+  background-color: var(--clr-background);
+}
+h1 {
+  font-size: var(--fs-h1);
+}
+h2 {
+  font-size: var(--fs-h2);
+  margin: 0;
+}
+p {
+  margin: 3px;
+}
+input {
+  font-size: var(--fs-body);
+}
+.errorMessage {
+  color: var(--clr-message);
+}
+
+.title {
+  text-align: center;
+}
+/* ****** dashboard ****** */
+.header__container {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: repeat(3, 1fr);
+  line-height: 1.5;
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
+  border: var(--clr-accent) 3px solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 0 auto 10px;
+  min-width: 270px;
+}
+.header__total_income_H1,
+.header__total_income {
+  color: var(--clr-income);
+}
+.header__total_expense_H1,
+.header__total_expenses {
+  color: var(--clr-expense);
+}
+
+/* ****** input form ****** */
+.form_container {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: repeat(4, auto);
+  border: var(--clr-dark) solid 3px;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0 auto 10px;
+  min-width: 270px;
+}
+.expense__btn {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  margin: 3px;
+  background-color: var(--clr-light);
+}
+.income__btn {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  margin: 3px;
+  background-color: var(--clr-light);
+}
+
+.activeExpense {
+  background-color: red;
+  border: var(--clr-dark) 2px solid;
+}
+.activeIncome {
+  background-color: var(--clr-accent);
+  border: var(--clr-dark) 2px solid;
+}
+
+.desc__input {
+  grid-column: 1/3;
+  grid-row: 2/3;
+  margin: 3px;
+}
+
+.date__input {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  margin: 3px;
+}
+.amount__input {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  margin: 3px;
+}
+.add_btn {
+  grid-column: 1/3;
+  grid-row: 4/5;
+  margin: 3px;
+  background-color: var(--clr-light);
+}
+
+/* ****** budget list ****** */
+.budget_container {
+  margin: 0 auto;
+  min-width: 270px;
+}
+
+.list__header-container,
+.list__entry-container {
+  display: grid;
+  grid-template-columns: 0.65fr 0.85fr 1.25fr 0.75fr;
+  margin: 10px 0 10px;
+}
+
+.list__date {
+  grid-column: 1/2;
+  width: 99%;
+}
+.list__amount {
+  grid-column: 2/3;
+  width: 99%;
+  text-align: center;
+}
+.list__desc {
+  grid-column: 3/4;
+  word-wrap: break-word;
+  width: 99%;
+}
+
+.list__btn_container {
+  grid-column: 4/5;
+  width: 99%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.list__edit_btn,
+.list__remove_btn {
+  width: 32px;
+  height: 32px;
+  margin: 0px;
+  background-color: var(--clr-light);
+}
+
+.fa-pencil,
+.fa-trash {
+  pointer-events: none;
+}
+
+.income_green {
+  color: var(--clr-income);
+}
+.expense_red {
+  color: var(--clr-expense);
+}
+
+.list__edit-container {
+  background-color: var(--clr-light);
+  position: absolute;
+  margin: 0 auto 0;
+  padding: 5px;
+  top: 50%;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(6, auto);
+  border: solid 3px var(--clr-dark);
+  border-radius: 5px;
+  width: 90%;
+  height: auto;
+  z-index: 2;
+  transform: scale(0.000001);
+}
+
+.list__edit-container_open .list__edit-container {
+  transform: scale(1);
+}
+.listEdit__title_h2,
+.listEdit__desc_p,
+.listEdit__desc,
+.listEdit__date_p,
+.listEdit__date,
+.listEdit__amount_p,
+.listEdit__amount,
+.listEdit__type_p,
+.listEdit__type,
+.listEdit__accept_edit_btn,
+.listEdit__cancel_btn {
+  margin: 5px;
+}
+
+.listEdit__title_h2 {
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+
+.listEdit__desc_p {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.listEdit__desc {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.listEdit__date_p {
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+
+.listEdit__date {
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+.listEdit__amount_p {
+  grid-column: 1/2;
+  grid-row: 4/5;
+}
+
+.listEdit__amount {
+  grid-column: 2/3;
+  grid-row: 4/5;
+}
+.listEdit__type_p {
+  grid-column: 1/2;
+  grid-row: 5/6;
+}
+.listEdit__type {
+  grid-column: 2/3;
+  grid-row: 5/6;
+}
+
+.listEdit__accept_edit_btn {
+  grid-column: 1/2;
+  grid-row: 6/7;
+}
+
+.listEdit__cancel_btn {
+  grid-column: 2/3;
+  grid-row: 6/7;
+}
+
+@media (min-width: 500px) {
+  .header__container {
+    max-width: 500px;
+  }
+  .form_container {
+    max-width: 500px;
+  }
+  .budget_container {
+    max-width: 500px;
+  }
+}
