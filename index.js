@@ -30,7 +30,6 @@ let total = 0
 let isAscDate = true
 let isAscAmount = true
 let isAscDesc = true
-let test
 
 add_btn.addEventListener("click", addItem)
 expense_btn.addEventListener("click", toggleType)
