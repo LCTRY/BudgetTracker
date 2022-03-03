@@ -1,0 +1,53 @@
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="stylesheet" href="./index.css" />
+    <script src="https://kit.fontawesome.com/d869fb8e6d.js" crossorigin="anonymous"></script>
+  </head>
+
+<body>
+    <h1 class="title">Budget Tracker</h1>
+
+    <header>
+      <div class="header__container">
+        <h2 class="header__total_income_H1">Income:</h2><h2 class="header__total_income" id="income_output"> 0 </h2>
+        <h2 class="header__total_expense_H1">Expenses:</h2><h2 class="header__total_expenses" id="expenses_output"> 0 </h2>
+        <h2 class="header__total_balance_H1">Balance:</h2><h2 class="header__total_balance" id="balance_output"> 0 </h2>
+      </div>
+    </header>
+      <div class="form_container">
+        <button class="expense__btn activeExpense" id="expense_input" >Expense</button>
+        <button class="income__btn" id="income_input">Income</button>
+        <input class="desc__input" id="desc_input" type="text" placeholder="Description"/>
+        <input class="date__input" id="date_input" type="date"/>
+        <input type="number" class="amount__input" id="amount_input" min="1" placeholder="$" />
+        <input type="submit" class="add_btn" id="add_btn" />
+        <p class="errorMessage" id="errorMessage_output"></p>
+      </div>
+
+    <div id="budget_div" class="budget_container">
+    </div>
+
+    <div id="edit_div" class="list__edit-container">
+      <h2 id="listEdit__title_h2" class="listEdit__title_h2"></h2>
+      <p class="listEdit__desc_p">Description</p>
+      <input id="listEdit__desc" class="listEdit__desc" type="text"/>
+      <p class="listEdit__date_p">Date</p>
+      <input id="listEdit__date" class="listEdit__date" type="date"/>
+      <p class="listEdit__amount_p">Amount</p>
+      <input id="listEdit__amount" class="listEdit__amount" type="number"/>
+      <p class="listEdit__type_p">Type</p>
+      <select id="listEdit__type" class="listEdit__type" name="type">
+        <option value="expense">Expense</option>
+        <option value="income">Income</option>
+      </select>
+      <button class="listEdit__accept_edit_btn">Accept</button>
+      <button class="listEdit__cancel_btn">Cancel</button>
+    </div>
+    <script src="./index.js"></script>
+</body>
